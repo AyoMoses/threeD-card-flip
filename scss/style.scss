@@ -1,3 +1,14 @@
+@mixin deskTopFirst($media) {
+    @media screen and (max-width: $media/16+em) { @content; }
+}
+
+@include deskTopFirst(768) {
+
+}
+@include deskTopFirst(685) {
+
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -36,6 +47,10 @@ body {
         box-sizing: border-box;
         padding: 20px;
     }
+
+    @include deskTopFirst(768) {
+        flex: 100%;
+    }
 }
 
  .card .imgBox {
@@ -62,3 +77,4 @@ body {
     height: 100%;
     object-fit: cover;
 }
+
